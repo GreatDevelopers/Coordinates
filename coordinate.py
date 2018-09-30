@@ -11,24 +11,27 @@ with open(inputfile) as f_input:
 	lines=len(content)
 	f_output = open(outputfile,"w+")
 	i = 0
-	string = "MLKJIHGFEDCBA"
-	word = list(string)
 	for x in content:
-		if i<lines-1:
-			'''Insert words in file'''
-			f_output.write(word[i])
+		'''Insert words in file'''
+		if i==0:
+			f_output.write("M")
+		elif i==1:
+			f_output.write("L")
 
 		i=i+1
 		'''Split each line at comma'''
 		import re
 		spli=re.split(',', x)
-		j=0
 		'''insert coordinates in file'''
+		j=0
 		for y in spli:
-			if j<len(spli)-1 or i==lines-1:
-				f_output.write(y+" ")
-			else:
+			if i==1 and j==len(spli)-1:
 				f_output.write(y)
+			elif i==lines and j==len(spli)-1:
+				f_output.write(y)
+			else:
+				f_output.write(y+" ")
+
 			j=j+1
 
 	f_output.write("Z")
