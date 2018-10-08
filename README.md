@@ -14,4 +14,4 @@ This script takes input file containing 2D points (in each line) as input and pr
 
 1. Run command:
 
-    ````python <inputfile> <outputfile>
+    ````python <inputfile> <outputfile>````
